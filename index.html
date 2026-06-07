@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezovo — Digital Presence</title>
+    <style>
+        :root {
+            --primary-dark: #111827;       /* Gris casi negro para títulos elegantes */
+            --electric-blue: #1E60FA;      /* El azul vibrante de tu marca "ovo" */
+            --blue-hover: #1546B8;
+            --text-muted: #6B7280;         /* Gris suave para descripciones */
+            --bg-pure-white: #FFFFFF;     /* Fondo totalmente blanco solicitado */
+            --bg-badge: #EFF6FF;           /* Fondo azul clarito para etiquetas */
+            --border-color: #E5E7EB;       /* Bordes finos de las tarjetas */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-pure-white);
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Soporte nativo para lectura de Derecha a Izquierda (Árabe) */
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        body.rtl .nav-links {
+            margin-right: auto;
+            margin-left: 0;
+        }
+        body.rtl .metrics-container, 
+        body.rtl .cards-grid,
+        body.rtl .timeline,
+        body.rtl .about-container,
+        body.rtl .contact-container {
+            direction: rtl;
+        }
+        body.rtl .timeline-step {
+            border-left: none;
+            border-right: 3px solid var(--electric-blue);
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 8%;
+            background-color: var(--bg-pure-white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-decoration: none;
+            font-family: 'Playfair Display', 'Georgia', serif;
+        }
+
+        .logo span {
+            color: var(--electric-blue);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Selector de Idiomas */
+        .lang-selector {
+            background-color: #F3F4F6;
+            padding: 0.25rem;
+            border-radius: 6px;
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            color: #9CA3AF;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            color: var(--primary-dark);
+            background-color: var(--bg-pure-white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn-nav-audit {
+            background-color: var(--electric-blue);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-nav-audit:hover {
+            background-color: var(--blue-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 5rem 8% 4rem 8%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            background-color: var(--bg-badge);
+            color: var(--electric-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 3.2rem;
+            color: var(--primary-dark);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero h1 span {
+            color: var(--electric-blue);
+            font-family: inherit;
+            display: block;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 680px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--electric-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--blue-hover);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-pure-white);
+            color: var(--electric-blue);
+            border: 1px solid var(--electric-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-badge);
+        }
+
+        /* Sección de Métricas */
+        .metrics-container {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 3rem 8%;
+            border-top: 1px solid #F3F4F6;
+            border-bottom: 1px solid #F3F4F6;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .metric-item {
+            text-align: center;
+        }
+
+        .metric-number {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            font-weight: 500;
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
+        /* Secciones Generales */
+        section {
+            padding: 6rem 8%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-tag {
+            color: var(--electric-blue);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin-bottom: 3.5rem;
+        }
+
+        /* Grid de Tarjetas */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-pure-white);
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+        }
+
+        .card-num {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2rem;
+            color: #E5E7EB;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Contenedor de Imagen de los Servicios */
+        .card-img-wrapper {
+            width: 100%;
+            height: 160px;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Empuja el precio hacia abajo equitativamente */
+        }
+
+        .card-price {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            display: block;
+            margin-top: auto;
+        }
+
+        /* Cronograma / Timeline */
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .timeline-step {
+            background: var(--bg-pure-white);
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--electric-blue);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .step-time {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--electric-blue);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-step h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        /* Quiénes Somos */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .about-text h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        /* Contacto */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form {
+            background: var(--bg-pure-white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            background-color: var(--bg-pure-white);
+            color: var(--primary-dark);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--electric-blue);
+            color: white;
+            border: none;
+            padding: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background-color 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--blue-hover);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-pure-white);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 3rem 2rem;
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 900px) {
+            nav { flex-direction: column; gap: 1rem; }
+            .nav-right { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .metrics-container { gap: 2rem; }
+            .about-container, .contact-container { grid-template-columns: 1fr; gap: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menú Superior Unificado -->
+    <nav>
+        <a href="#" class="logo">Prez<span>ovo</span></a>
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#how-it-works" id="lnk-method">Methodology</a>
+                <a href="#about" id="lnk-about">About Us</a>
+                <a href="#services" id="lnk-services">Services</a>
+                <a href="#contact" id="lnk-contact">Contact</a>
+            </div>
+            <div class="lang-selector">
+                <button class="lang-btn active" onclick="changeLang('en')">EN</button>
+                <button class="lang-btn" onclick="changeLang('es')">ES</button>
+                <button class="lang-btn" onclick="changeLang('ar')">AR</button>
+            </div>
+            <a href="#contact" class="btn-nav-audit" id="nav-btn">Get a free audit</a>
+        </div>
+    </nav>
+
+    <!-- Héroe Principal -->
+    <header class="hero">
+        <span class="badge" id="hero-badge">Digital Presence for Local Businesses</span>
+        <h1 id="hero-title">Your business deserves to be <span>found online</span></h1>
+        <p id="hero-desc">We help traditional businesses in Dubai, the US and Europe build a professional digital presence — website, Google Maps, social media — and attract more customers.</p>
+        <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary" id="hero-btn1">Get a free audit</a>
+            <a href="#services" class="btn btn-secondary" id="hero-btn2">See our services</a>
+        </div>
+    </header>
+
+    <!-- Barra de Métricas -->
+    <div class="metrics-container">
+        <div class="metric-item">
+            <span class="metric-number">+200%</span>
+            <span class="metric-label" id="m1">Average visibility increase</span>
+        </div>
+        <div class="metric-item">
+            <span class="metric-number">2 weeks</span>
+            <span class="metric-label" id="m2">Average delivery time</span>
+        </div>
+        <div class="metric-item">
+            <span class="metric-number">100%</span>
+            <span class="metric-label" id="m3">Remote & international</span>
+        </div>
+    </div>
+
+    <!-- Cómo Funciona + Cronograma -->
+    <section id="how-it-works">
+        <span class="section-tag" id="hw-tag">How it works</span>
+        <h2 id="hw-title">Simple, fast, and effective</h2>
+        <p class="section-desc" id="hw-desc">We analyze your current situation and deliver a complete digital upgrade in 2 weeks.</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-num">01</span>
+                <h3 id="hw-c1-t">Free audit</h3>
+                <p id="hw-c1-p">We analyze your website, Google Maps profile and social media to find areas of improvement.</p>
+            </div>
+            <div class="card">
+                <span class="card-num">02</span>
+                <h3 id="hw-c2-t">Custom proposal</h3>
+                <p id="hw-c2-p">We send you a tailored plan with the services you need and a clear, fixed price estimate.</p>
+            </div>
+            <div class="card">
+                <span class="card-num">03</span>
+                <h3 id="hw-c3-t">We get to work</h3>
+                <p id="hw-c3-p">Our team handles everything remotely. You just review and approve the final upgrades.</p>
+            </div>
+        </div>
+
+        <!-- Cronograma de Trabajo Detallado -->
+        <div style="margin-top: 5rem;">
+            <span class="section-tag" id="t-tag">The Timeline</span>
+            <h2 id="t-title">Audit and Deployment Schedule</h2>
+            <div class="timeline">
+                <div class="timeline-step">
+                    <span class="step-time" id="ts1">Days 1 - 3</span>
+                    <h4 id="tt1">1. Comprehensive Audit</h4>
+                    <p id="tp1">We deep-dive into your current metrics, identifying conversion leaks and flaws compared to competitors.</p>
+                </div>
+                <div class="timeline-step">
+                    <span class="step-time" id="ts2">Days 4 - 5</span>
+                    <h4 id="tt2">2. Strategy & Mapping</h4>
+                    <p id="tp2">We design the action plan, international target keywords, and new global brand architecture.</p>
+                </div>
+                <div class="timeline-step">
+                    <span class="step-time" id="ts3">Days 6 - 11</span>
+                    <h4 id="tt3">3. Rapid Development</h4>
+                    <p id="tp3">We program the web architecture, restructure your local SEO on Google, and craft your social aesthetic.</p>
+                </div>
+                <div class="timeline-step">
+                    <span class="step-time" id="ts4">Days 12 - 14</span>
+                    <h4 id="tt4">4. Global Deployment</h4>
+                    <p id="tp4">Final launch. Your business officially moves from local scale straight to global screens smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiénes Somos -->
+    <section id="about">
+        <span class="section-tag" id="ab-tag">Strategy Behind Prezovo</span>
+        <h2 id="ab-title">Global Vision, Academic Roots</h2>
+        <p class="section-desc" id="ab-desc">We combine the business pragmatism of the United States with the analytical rigor of European markets.</p>
+        
+        <div class="about-container">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" alt="Founder" class="about-img">
+            <div class="about-text">
+                <h3 id="ab-h3">Background & Expertise</h3>
+                <p id="ab-p1">My trajectory is built on a double foundation: deep studies in <strong>Economics and International Trade</strong>, and an obsession with agile technology deployment. A website is not an ornament; it is a financial asset designed to capture capital.</p>
+                <p id="ab-p2">Inspired by the speed and operational rhythm of the United States business ecosystem, I engineered Prezovo to disrupt slow corporate agencies. We upgrade SMBs infrastructure to meet global standards demanded by international clients.</p>
+                <p id="ab-p3">Whether your end client is right across the street or an investor looking from abroad (Dubai, Europe, or the US), we ensure your digital storefront projects absolute authority.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios con imágenes reales y profesionales -->
+    <section id="services">
+        <span class="section-tag" id="s-tag">Services</span>
+        <h2 id="s-title">Everything you need to get found</h2>
+        <p class="section-desc" id="s-desc">Choose one service or combine them all. Fixed prices, no hidden fees.</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <!-- Imagen de Sitio Web Profesional -->
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=500" alt="Professional Website">
+                </div>
+                <h3 id="s-c1-t">Professional Website</h3>
+                <p id="s-c1-p">Modern, fast and mobile-ready website designed to convert visitors into customers.</p>
+                <span class="card-price" id="s-c1-pr">From €800</span>
+            </div>
+            <div class="card">
+                <!-- Imagen de Google Maps -->
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=500" alt="Google Maps Optimization">
+                </div>
+                <h3 id="s-c2-t">Google Maps Optimization</h3>
+                <p id="s-c2-p">Get your business to appear at the top of local searches. More visibility, more walk-ins.</p>
+                <span class="card-price" id="s-c2-pr">From €300</span>
+            </div>
+            <div class="card">
+                <!-- Imagen de Redes Sociales -->
+                <div class="card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&q=80&w=500" alt="Social Media Setup">
+                </div>
+                <h3 id="s-c3-t">Social Media Setup</h3>
+                <p id="s-c3-p">Professional Instagram and TikTok profiles with consistent branding and content strategy.</p>
+                <span class="card-price" id="s-c3-pr">From €400</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact">
+        <span class="section-tag" id="c-tag">Apply Now</span>
+        <h2 id="c-title">Get Started Today</h2>
+        <p class="section-desc" id="c-desc">Take the definitive step towards modernization. Fill out the form to schedule your audit.</p>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 id="c-info-t">Global Channels</h3>
+                <p id="c-info-p">We remotely serve projects with a global vision across Europe, the Middle East (Dubai), and North America.</p>
+                <p><strong>Email:</strong> hello@prezovo.com</p>
+                <p><strong id="c-info-m">Operational Standard:</strong> USA fast-track execution methodology.</p>
+            </div>
+
+            <div class="contact-form">
+                <form action="mailto:hello@prezovo.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name" id="lbl-name">Name / Company Name</label>
+                        <input type="text" id="name" name="Name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="Email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" id="lbl-msg">Message (Current state of your Web, Maps & Instagram)</label>
+                        <textarea id="message" name="Message" class="form-control" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" id="btn-submit">Request Free Audit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Prezovo · Infrastructure and Global Digital Strategy · From local business to global screens · hello@prezovo.com</p>
+    </footer>
+
+    <!-- Motor JavaScript Completo de Traducción -->
+    <script>
+        const translations = {
+            en: {
+                lnkMethod: "Methodology", lnkAbout: "About Us", lnkServices: "Services", lnkContact: "Contact",
+                navBtn: "Get a free audit",
+                heroBadge: "Digital Presence for Local Businesses",
+                heroTitle: "Your business deserves to be <span>found online</span>",
+                heroDesc: "We help traditional businesses in Dubai, the US and Europe build a professional digital presence — website, Google Maps, social media — and attract more customers.",
+                heroBtn1: "Get a free audit", heroBtn2: "See our services",
+                m1: "Average visibility increase", m2: "Average delivery time", m3: "Remote & international",
+                hwTag: "How it works", hwTitle: "Simple, fast, and effective",
+                hwDesc: "We analyze your current situation and deliver a complete digital upgrade in 2 weeks.",
+                hwC1T: "Free audit", hwC1P: "We analyze your website, Google Maps profile and social media to find areas of improvement.",
+                hwC2T: "Custom proposal", hwC2P: "We send you a tailored plan with the services you need and a clear, fixed price estimate.",
+                hwC3T: "We get to work", hwC3P: "Our team handles everything remotely. You just review and approve the final upgrades.",
+                tTag: "The Timeline", tTitle: "Audit and Deployment Schedule",
+                ts1: "Days 1 - 3", tt1: "1. Comprehensive Audit", tp1: "We deep-dive into your current metrics, identifying conversion leaks and flaws compared to competitors.",
+                ts2: "Days 4 - 5", tt2: "2. Strategy & Mapping", tp2: "We design the action plan, international target keywords, and new global brand architecture.",
+                ts3: "Days 6 - 11", tt3: "3. Rapid Development", tp3: "We program the web architecture, restructure your local SEO on Google, and craft your social aesthetic.",
+                ts4: "Days 12 - 14", tt4: "4. Global Deployment", tp4: "Final launch. Your business officially moves from local scale straight to global screens smoothly.",
+                abTag: "Strategy Behind Prezovo", abTitle: "Global Vision, Academic Roots", abDesc: "We combine the business pragmatism of the United States with the analytical rigor of European markets.",
+                abH3: "Background & Expertise", abP1: "My trajectory is built on a double foundation: deep studies in Economics and International Trade, and an obsession with agile technology deployment. A website is not an ornament; it is a financial asset designed to capture capital.",
+                abP2: "Inspired by the speed and operational rhythm of the United States business ecosystem, I engineered Prezovo to disrupt slow corporate agencies. We upgrade SMBs infrastructure to meet global standards demanded by international clients.",
+                abP3: "Whether your end client is right across the street or an investor looking from abroad (Dubai, Europe, or the US), we ensure your digital storefront projects absolute authority.",
+                sTag: "Services", sTitle: "Everything you need to get found",
+                sDesc: "Choose one service or combine them all. Fixed prices, no hidden fees.",
+                sC1T: "Professional Website", sC1P: "Modern, fast and mobile-ready website designed to convert visitors into customers.", sC1Pr: "From €800",
+                sC2T: "Google Maps Optimization", sC2P: "Get your business to appear at the top of local searches. More visibility, more walk-ins.", sC2Pr: "From €300",
+                sC3T: "Social Media Setup", sC3P: "Professional Instagram and TikTok profiles with consistent branding and content strategy.", sC3Pr: "From €400",
+                cTag: "Apply Now", cTitle: "Get Started Today", cDesc: "Take the definitive step towards modernization. Fill out the form to schedule your audit.",
+                cInfoT: "Global Channels", cInfoP: "We remotely serve projects with a global vision across Europe, the Middle East (Dubai), and North America.", cInfoM: "Operational Standard: USA fast-track execution methodology.",
+                lblName: "Name / Company Name", lblMsg: "Message (Current state of your Web, Maps & Instagram)", btnSubmit: "Request Free Audit"
+            },
+            es: {
+                lnkMethod: "Metodología", lnkAbout: "Quiénes Somos", lnkServices: "Servicios", lnkContact: "Contacto",
+                navBtn: "Auditoría gratuita",
+                heroBadge: "Presencia Digital para Negocios Locales",
+                heroTitle: "Tu negocio merece ser <span>encontrado en línea</span>",
+                heroDesc: "Ayudamos a empresas tradicionales en Dubái, EE. UU. y Europa a construir una presencia digital profesional (sitio web, Google Maps, redes sociales) y atraer más clientes.",
+                heroBtn1: "Auditoría gratuita", heroBtn2: "Ver servicios",
+                m1: "Incremento medio de visibilidad", m2: "Tiempo medio de entrega", m3: "Remoto e internacional",
+                hwTag: "Cómo funciona", hwTitle: "Simple, rápido y efectivo",
+                hwDesc: "Analizamos tu situación actual y entregamos una actualización digital completa en 2 semanas.",
+                hwC1T: "Auditoría gratuita", hwC1P: "Analizamos tu sitio web, perfil de Google Maps y redes sociales para encontrar áreas de mejora.",
+                hwC2T: "Propuesta a medida", hwC2P: "Te enviamos un plan personalizado con los servicios que necesitas y un presupuesto claro y cerrado.",
+                hwC3T: "Nos ponemos a trabajar", hwC3P: "Nuestro equipo se encarga de todo de forma remota. Tú solo revisas y apruebas las mejoras finales.",
+                tTag: "El Cronograma", tTitle: "Planificación de Auditoría y Despliegue",
+                ts1: "Días 1 - 3", tt1: "1. Auditoría Integral", tp1: "Evaluamos tus métricas actuales e identificamos fugas de conversión e imperfecciones frente a tu competencia.",
+                ts2: "Días 4 - 5", tt2: "2. Estrategia y Mapeo", tp2: "Diseñamos el plan de acción, palabras clave globales y la nueva arquitectura de marca trasatlántica.",
+                ts3: "Días 6 - 11", tt3: "3. Desarrollo Veloz", tp3: "Programamos el código web, reestructuramos el SEO local en Google y diseñamos las pautas estéticas de tus redes.",
+                ts4: "Días 12 - 14", tt4: "4. Despliegue Global", tp4: "Subida definitiva. Tu negocio pasa oficialmente de escala local a las pantallas de todo el mundo de forma limpia.",
+                abTag: "Estrategia Detrás de Prezovo", abTitle: "Enfoque Global, Raíces Académicas", abDesc: "Combinamos el pragmatismo comercial de Estados Unidos con el rigor analítico de los mercados europeos.",
+                abH3: "Formación y Trayectoria", abP1: "Mi trayectoria se cimenta sobre una doble base: un profundo estudio en Economía y Comercio Internacional y una obsesión por la ejecución tecnológica ágil. Entiendo que una web no es un gasto decorativo, sino un canal financiero para captar capital.",
+                abP2: "Inspirado directamente por la velocidad operativa del ecosistema de negocios en Estados Unidos, diseñé Prezovo para romper el modelo de las agencias lentas. Adaptamos la infraestructura de pymes y firmas profesionales para que cumplan con los estándares internacionales exigidos.",
+                abP3: "Tanto si tu cliente final está cruzando la calle en tu ciudad como si es un inversor operando de forma remota (Dubái, Europa o EE. UU.), nos aseguramos de que tu carta de presentación digital sea intachable.",
+                sTag: "Servicios", sTitle: "Todo lo que necesitas para que te encuentren",
+                sDesc: "Elige un servicio o combínalos todos. Precios fijos, sin tarifas ocultas.",
+                sC1T: "Sitio Web Profesional", sC1P: "Sitio moderno, rápido y adaptado a móviles, diseñado para convertir visitantes en clientes.", sC1Pr: "Desde 800€",
+                sC2T: "Optimización de Google Maps", sC2P: "Logra que tu negocio aparezca en lo más alto de las búsquedas locales. Más visibilidad, más visitas.", sC2Pr: "Desde 300€",
+                sC3T: "Configuración de Redes Sociales", sC3P: "Perfiles profesionales de Instagram y TikTok con una marca coherente y estrategia de contenido.", sC3Pr: "Desde 400€",
+                cTag: "Aplica Ahora", cTitle: "Comienza Hoy Mismo", cDesc: "Da el paso definitivo hacia la modernización. Rellena el formulario y agendamos tu auditoría.",
+                cInfoT: "Canales Globales", cInfoP: "Atendemos de forma remota a proyectos con visión internacional en Europa, Medio Oriente (Dubái) y América del Norte.", cInfoM: "Estándar Operativo: Metodología USA de ejecución rápida.",
+                lblName: "Nombre / Empresa", lblMsg: "Mensaje (Estado actual de tu Web, Maps e Instagram)", btnSubmit: "Solicitar Auditoría Gratuita"
+            },
+            ar: {
+                lnkMethod: "منهجية العمل", lnkAbout: "من نحن", lnkServices: "الخدمات", lnkContact: "اتصل بنا",
+                navBtn: "احصل على تدقيق مجاني",
+                heroBadge: "التواجد الرقمي للشركات المحلية",
+                heroTitle: "عملك يستحق أن <span>يُعثر عليه عبر الإنترنت</span>",
+                heroDesc: "نحن نساعد الشركات التقليدية في دبي والولايات المتحدة وأوروبا على بناء تواجد رقمي احترافي — الموقع الإلكتروني، خرائط جوجل، وسائل التواصل الاجتماعي — وجذب المزيد من العملاء.",
+                heroBtn1: "احصل على تدقيق مجاني", heroBtn2: "شاهد خدماتنا",
+                m1: "متوسط زيادة الظهور", m2: "متوسط وقت التسليم", m3: "عن بعد وعالمي",
+                hwTag: "كيف نعمل", hwTitle: "بسيط، سريع، وفعال",
+                hwDesc: "نحلل وضعك الحالي ونقدم تحديثًا رقميًا شاملاً في غضون أسبوعين.",
+                hwC1T: "تدقيق مجاني", hwC1P: "نحلل موقعك الإلكتروني، وملفك الشخصي على خرائط جوجل، وحساباتك الاجتماعية لتحديد نقاط التحسين.",
+                hwC2T: "مقترح مخصص", hwC2P: "نرسل لك خطة مخصصة بالخدمات التي تحتاجها وبسعر ثابت وواضح.",
+                hwC3T: "نبدأ العمل", hwC3P: "يتولى فريقنا كل شيء عن بعد. ما عليك سوى المراجعة والموافقة على التحديثات النهائية.",
+                tTag: "الجدول الزمني", tTitle: "مخطط التدقيق والنشر الرقمي",
+                ts1: "الأيام 1 - 3", tt1: "1. تدقيق شامل", tp1: "نحلل مقاييسك الحالية ونحدد ثغرات التحويل والعيوب مقارنة بمنافسيك.",
+                ts2: "الأيام 4 - 5", tt2: "2. الاستراتيجية والتخطيط", tp2: "نصمم خطة العمل، والكلمات المفتاحية المستهدفة دوليًا، وبنية العلامة التجارية الجديدة.",
+                ts3: "الأيام 6 - 11", tt3: "3. تطوير سريع", tp3: "نبرمج موقعك الإلكتروني، ونعيد هيكلة السيو المحلي على جوجل، ونصمم القواعد المرئية لشبكاتك.",
+                ts4: "الأيام 12 - 14", tt4: "4. النشر العالمي", tp4: "الإطلاق النهائي. ينتقل عملك رسميًا من النطاق المحلي إلى الشاشات العالمية بسلاسة.",
+                abTag: "الاستراتيجية وراء بريزوفو", abTitle: "رؤية عالمية، جذور أكاديمية", abDesc: "نجمع بين البراغماتية التجارية للولايات المتحدة والتدقيق التحليلي للأسواق الأوروبية.",
+                abH3: "الخلفية والخبرة", abP1: "تتأسس مسيرتي على قاعدة مزدوجة: دراسة عميقة في الاقتصاد والتجارة الدولية، وهوس بالتنفيذ التكنولوجي السريع. الموقع الإلكتروني ليس مجرد زينة بل أصل مالي.",
+                abP2: "مستوحى مباشرة من السرعة التشغيلية لنظام الأعمال في الولايات المتحدة، صممت بريزوفو لكسر نموذج الوكالات البطيئة. نرفع بنية الشركات لتلبية المعايير العالمية.",
+                abP3: "سواء كان عميلك النهائي عبر الشارع أو مستثمرًا أمريكيًا يراقب من الخارج (دبي، أوروبا، أو الولايات المتحدة)، فإننا نضمن أن تكون واجهتك الرقمية مثالية.",
+                sTag: "الخدمات", sTitle: "كل ما تحتاجه لتكون مرئيًا",
+                sDesc: "اختر خدمة واحدة أو اجمعها كلها. أسعار ثابتة، بدون رسوم خفية.",
+                sC1T: "موقع إلكتروني احترافي", sC1P: "موقع حديث، سريع، ومتوافق مع الهواتف مصمم لتحويل الزوار إلى عملاء دائمين.", sC1Pr: "تبدأ من 800 يورو",
+                sC2T: "تحسين خرائط جوجل", sC2P: "اجعل عملك يظهر في مقدمة نتائج البحث المحلية. زيادة في الظهور وزيادة في الزوار.", sC2Pr: "تبدأ من 300 يورو",
+                sC3T: "إعداد وسائل التواصل الاجتماعي", sC3P: "ملفات إنستغرام وتيك توك احترافية بهوية بصرية متناسقة واستراتيجية محتوى واضحة.", sC3Pr: "تبدأ من 400 يورو",
+                cTag: "قدم طلبك الآن", cTitle: "ابدأ اليوم", cDesc: "اتخذ الخطوة الحاسمة نحو التحديث. املأ النموذج لتحديد موعد التدقيق.",
+                cInfoT: "القنوات العالمية", cInfoP: "نحن نخدم عن بعد المشاريع ذات الرؤية العالمية في أوروبا والشرق الأوسط (دبي) وأمريكا الشمالية.", cInfoM: "المعيار التشغيلي: آلية التنفيذ السريع الأمريكية.",
+                lblName: "الاسم / اسم الشركة", lblMsg: "الرسالة (الوضع الحالي لموقعك وخرائطك وإنستغرام)", btnSubmit: "طلب تدقيق مجاني"
+            }
+        };
+
+        function changeLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            if (lang === 'ar') {
+                document.body.classList.add('rtl');
+            } else {
+                document.body.classList.remove('rtl');
+            }
+
+            // Enlaces de navegación
+            document.getElementById('lnk-method').innerText = translations[lang].lnkMethod;
+            document.getElementById('lnk-about').innerText = translations[lang].lnkAbout;
+            document.getElementById('lnk-services').innerText = translations[lang].lnkServices;
+            document.getElementById('lnk-contact').innerText = translations[lang].lnkContact;
+
+            // Hero & Nav Button
+            document.getElementById('nav-btn').innerText = translations[lang].navBtn;
+            document.getElementById('hero-badge').innerText = translations[lang].heroBadge;
+            document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
+            document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
+            document.getElementById('hero-btn1').innerText = translations[lang].heroBtn1;
+            document.getElementById('hero-btn2').innerText = translations[lang].heroBtn2;
+            
+            // Métricas
+            document.getElementById('m1').innerText = translations[lang].m1;
+            document.getElementById('m2').innerText = translations[lang].m2;
+            document.getElementById('m3').innerText = translations[lang].m3;
+
+            // How It Works
+            document.getElementById('hw-tag').innerText = translations[lang].hwTag;
+            document.getElementById('hw-title').innerText = translations[lang].hwTitle;
+            document.getElementById('hw-desc').innerText = translations[lang].hwDesc;
+            document.getElementById('hw-c1-t').innerText = translations[lang].hwC1T;
+            document.getElementById('hw-c1-p').innerText = translations[lang].hwC1P;
+            document.getElementById('hw-c2-t').innerText = translations[lang].hwC2T;
+            document.getElementById('hw-c2-p').innerText = translations[lang].hwC2P;
+            document.getElementById('hw-c3-t').innerText = translations[lang].hwC3T;
+            document.getElementById('hw-c3-p').innerText = translations[lang].hwC3P;
+
+            // Timeline
+            document.getElementById('t-tag').innerText = translations[lang].tTag;
+            document.getElementById('t-title').innerText = translations[lang].tTitle;
+            document.getElementById('ts1').innerText = translations[lang].ts1;
+            document.getElementById('ts2').innerText = translations[lang].ts2;
+            document.getElementById('ts3').innerText = translations[lang].ts3;
+            document.getElementById('ts4').innerText = translations[lang].ts4;
+            document.getElementById('tt1').innerText = translations[lang].tt1;
+            document.getElementById('tt2').innerText = translations[lang].tt2;
+            document.getElementById('tt3').innerText = translations[lang].tt3;
+            document.getElementById('tt4').innerText = translations[lang].tt4;
+            document.getElementById('tp1').innerText = translations[lang].tp1;
+            document.getElementById('tp2').innerText = translations[lang].tp2;
+            document.getElementById('tp3').innerText = translations[lang].tp3;
+            document.getElementById('tp4').innerText = translations[lang].tp4;
+
+            // About Us
+            document.getElementById('ab-tag').innerText = translations[lang].abTag;
+            document.getElementById('ab-title').innerText = translations[lang].abTitle;
+            document.getElementById('ab-desc').innerText = translations[lang].abDesc;
+            document.getElementById('ab-h3').innerText = translations[lang].abH3;
+            document.getElementById('ab-p1').innerText = translations[lang].abP1;
+            document.getElementById('ab-p2').innerText = translations[lang].abP2;
+            document.getElementById('ab-p3').innerText = translations[lang].abP3;
+
+            // Services
+            document.getElementById('s-tag').innerText = translations[lang].sTag;
+            document.getElementById('s-title').innerText = translations[lang].sTitle;
+            document.getElementById('s-desc').innerText = translations[lang].sDesc;
+            document.getElementById('s-c1-t').innerText = translations[lang].sC1T;
+            document.getElementById('s-c1-p').innerText = translations[lang].sC1P;
+            document.getElementById('s-c1-pr').innerText = translations[lang].sC1Pr;
+            document.getElementById('s-c2-t').innerText = translations[lang].sC2T;
+            document.getElementById('s-c2-p').innerText = translations[lang].sC2P;
+            document.getElementById('s-c2-pr').innerText = translations[lang].sC2Pr;
+            document.getElementById('s-c3-t').innerText = translations[lang].sC3T;
+            document.getElementById('s-c3-p').innerText = translations[lang].sC3P;
+            document.getElementById('s-c3-pr').innerText = translations[lang].sC3Pr;
+
+            // Contact
+            document.getElementById('c-tag').innerText = translations[lang].cTag;
+            document.getElementById('c-title').innerText = translations[lang].cTitle;
+            document.getElementById('c-desc').innerText = translations[lang].cDesc;
+            document.getElementById('c-info-t').innerText = translations[lang].cInfoT;
+            document.getElementById('c-info-p').innerText = translations[lang].cInfoP;
+            document.getElementById('c-info-m').innerText = translations[lang].cInfoM;
+            document.getElementById('lbl-name').innerText = translations[lang].lblName;
+            document.getElementById('lbl-msg').innerText = translations[lang].lblMsg;
+            document.getElementById('btn-submit').innerText = translations[lang].btnSubmit;
+        }
+    </script>
+</body>
+</html>
