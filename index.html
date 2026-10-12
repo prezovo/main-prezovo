@@ -1,213 +1,1163 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prezovo | Equipo comercial externo para empresas de servicios</title>
-<meta name="description" content="Prezovo contacta, filtra y concierta reuniones con clientes para empresas de servicios. Tú solo cierras.">
-<meta property="og:title" content="Prezovo | Equipo comercial externo">
-<meta property="og:description" content="Captación de clientes online, con tu marca y con condiciones claras por escrito.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B6E6E'/%3E%3Ctext x='32' y='45' font-size='38' text-anchor='middle' fill='white' font-family='Arial' font-weight='700'%3EP%3C/text%3E%3C/svg%3E">
+<title>Prezovo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap">
+
 <style>
-:root{--ink:#0E1B2A;--text:#33465A;--mist:#F2F5F7;--card:#FFFFFF;--line:#D7DFE6;--teal:#0B6E6E;--teal-d:#085757;--amber:#F0A92E;--deep:#0A1622;
---head:'Bricolage Grotesque','Segoe UI',Arial,sans-serif;--body:'Source Sans 3','Segoe UI',Arial,sans-serif}
-@media(prefers-color-scheme:dark){:root{--ink:#EDF2F6;--text:#B3C1CD;--mist:#0A1622;--card:#112233;--line:#22384C;--teal:#41C6C2;--teal-d:#2EA8A4;--deep:#060F18}}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-body{font-family:var(--body);font-size:18px;line-height:1.65;color:var(--text);background:var(--mist)}
-a{color:inherit}:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-h1,h2,h3{font-family:var(--head);color:var(--ink);line-height:1.1;letter-spacing:-.025em}
-h1{font-size:clamp(2.4rem,5.6vw,4.1rem);font-weight:800}
-h2{font-size:clamp(1.8rem,3.8vw,2.7rem);font-weight:700;margin-bottom:16px}
-h3{font-size:1.2rem;font-weight:700;margin-bottom:8px;letter-spacing:-.01em}
-p{max-width:60ch}section{padding:96px 0}.lead{font-size:1.15rem}
-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--mist) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-.logo{font-family:var(--head);font-weight:800;font-size:1.45rem;color:var(--ink);text-decoration:none}.logo span{color:var(--teal)}
-nav ul{display:flex;gap:28px;list-style:none;align-items:center}nav a{text-decoration:none;font-weight:600;font-size:.96rem;color:var(--ink)}nav a:hover{color:var(--teal)}
-.btn{display:inline-block;background:var(--teal);color:#fff;padding:15px 28px;border-radius:10px;font:600 1rem var(--body);text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s}
-.btn:hover{background:var(--teal-d)}
-nav .btn{padding:10px 20px;color:#fff}nav .btn:hover{color:#fff}
-.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--teal);background:transparent}
-@media(max-width:820px){nav li:not(:last-child){display:none}}
-.hero{padding:88px 0 80px}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
-.hero h1{margin-bottom:24px}
-.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
-.note{margin-top:22px;font-size:.95rem}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
-.lead-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 24px 50px -28px rgba(10,22,34,.35);overflow:hidden}
-.lead-card header{position:static;background:var(--deep);color:#EDF2F6;padding:14px 22px;font:600 .92rem var(--body);display:flex;justify-content:space-between;border:0;backdrop-filter:none}
-.lead-card header span:last-child{color:var(--amber)}
-.lead-card dl{padding:8px 22px 4px}
-.lead-card .row{display:grid;grid-template-columns:128px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font-size:.98rem}
-.lead-card .row:last-child{border:0}
-.lead-card dt{color:var(--text);font-size:.9rem}.lead-card dd{color:var(--ink);font-weight:600}
-.lead-card footer{padding:14px 22px;background:var(--mist);font-size:.85rem;border-top:1px solid var(--line)}
-.band{background:var(--card);border-block:1px solid var(--line);padding:30px 0}
-.band .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
-.band strong{display:block;color:var(--ink);font-family:var(--head);font-size:1.1rem;margin-bottom:2px}
-.band span{font-size:.97rem}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:24px;margin-top:40px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:30px}
-.card p{font-size:1rem}
-.card.accent{border-top:5px solid var(--teal)}
-.sectors{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-top:40px;border-top:1px solid var(--line)}
-.sector{padding:26px 28px 26px 0;border-bottom:1px solid var(--line)}
-.sector p{font-size:1rem}
-.dark{background:var(--deep);color:#B3C1CD}.dark h2,.dark h3{color:#EDF2F6}
-.route{list-style:none;margin-top:44px;position:relative;padding-left:44px}
-.route::before{content:"";position:absolute;left:13px;top:8px;bottom:8px;width:2px;background:var(--amber)}
-.route li{position:relative;padding:0 0 34px}.route li:last-child{padding-bottom:0}
-.route li::before{content:"";position:absolute;left:-39px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--deep);border:3px solid var(--amber)}
-.route p{font-size:1rem;color:#B3C1CD}
-.checks{list-style:none;display:grid;gap:14px;margin-top:30px}
-.checks li{padding-left:34px;position:relative}
-.checks li::before{content:"";position:absolute;left:2px;top:.5em;width:15px;height:8px;border-left:3px solid var(--teal);border-bottom:3px solid var(--teal);transform:rotate(-45deg)}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-@media(max-width:900px){.split{grid-template-columns:1fr;gap:36px}}
-details{border-top:1px solid var(--line);padding:22px 0}details:last-of-type{border-bottom:1px solid var(--line)}
-summary{font-family:var(--head);font-weight:700;font-size:1.15rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
-summary::after{content:"+";color:var(--teal);font-size:1.5rem;line-height:1}details[open] summary::after{content:"–"}
-details p{margin-top:12px}
-.contact{background:var(--teal);color:#E4F5F4}
-.contact h2{color:#fff}
-.form{background:var(--card);border-radius:18px;padding:32px;color:var(--text)}
-.form label{display:block;font-weight:600;color:var(--ink);font-size:.95rem;margin:0 0 6px}
-.form .f{margin-bottom:18px}
-.form input,.form select,.form textarea{width:100%;font:inherit;color:var(--ink);background:var(--mist);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
-.form textarea{min-height:110px;resize:vertical}
-.form small{display:block;margin-top:12px;font-size:.85rem}
-footer.site{padding:34px 0;font-size:.92rem}
-footer.site .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+/* ============================================================
+   PREZOVO — Intermediario Comercial B2B
+   Colores del logo: #1a2332 (marino), #1a56db (azul eléctrico), blanco
+   Layout: hero oscuro de marca, secciones alternadas claras
+   ============================================================ */
+
+:root {
+  /* Marca Prezovo — del logo */
+  --navy:       #1a2332;   /* fondo oscuro logo */
+  --electric:   #1a56db;   /* azul eléctrico logo */
+  --electric-l: #3b72f0;   /* versión ligeramente más clara para hover */
+
+  /* Página — light mode */
+  --bg:         #F5F5F2;
+  --bg-alt:     #EBEBЕ7;
+  --surface:    #FFFFFF;
+  --fg:         #111210;
+  --fg-mid:     #444440;
+  --fg-muted:   #717169;
+  --border:     #D6D4CD;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+}
+
+/* Fix: bg-alt typo workaround */
+:root { --bg-alt: #EBEBЕ7; }
+/* Redefine clean */
+:root { --bg-alt: #EBEAE6; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:       #111210;
+    --bg-alt:   #191917;
+    --surface:  #1E1E1B;
+    --fg:       #F0EFE9;
+    --fg-mid:   #BDBBB3;
+    --fg-muted: #7A7970;
+    --border:   #2C2C28;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg:       #111210;
+  --bg-alt:   #191917;
+  --surface:  #1E1E1B;
+  --fg:       #F0EFE9;
+  --fg-mid:   #BDBBB3;
+  --fg-muted: #7A7970;
+  --border:   #2C2C28;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 100;
+  background: var(--navy);
+  padding: 0 clamp(16px, 5vw, 72px);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.375rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.nav-logo .logo-ovo { color: var(--electric); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: #fff; }
+
+.nav-cta {
+  background: var(--electric) !important;
+  color: #fff !important;
+  padding: 9px 22px;
+  border-radius: 5px;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  transition: background 0.15s !important;
+}
+.nav-cta:hover { background: var(--electric-l) !important; color: #fff !important; }
+
+.nav-mobile-cta {
+  display: none;
+  background: var(--electric);
+  color: #fff;
+  padding: 9px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-mobile-cta { display: block; }
+}
+
+/* ── HERO ────────────────────────────────────────────── */
+.hero {
+  background: var(--navy);
+  color: #fff;
+  padding: clamp(72px, 10vw, 130px) clamp(16px, 5vw, 72px) clamp(64px, 8vw, 100px);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  min-height: 88vh;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(26,86,219,0.5);
+  border-radius: 999px;
+  padding: 5px 14px 5px 8px;
+  margin-bottom: 32px;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.75);
+}
+.hero-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--electric);
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.5vw, 4.75rem);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  margin-bottom: 28px;
+}
+
+.hero h1 .accent { color: var(--electric); }
+
+.hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: rgba(255,255,255,0.58);
+  max-width: 46ch;
+  line-height: 1.75;
+  margin-bottom: 44px;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-blue {
+  background: var(--electric);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-blue:hover { background: var(--electric-l); }
+
+.btn-outline {
+  color: rgba(255,255,255,0.7);
+  padding: 14px 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+.btn-outline:hover { color: #fff; }
+
+/* Right side: proposition cards */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.prop-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 10px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+.prop-card:hover { background: rgba(255,255,255,0.07); }
+
+.prop-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  background: rgba(26,86,219,0.25);
+  border: 1px solid rgba(26,86,219,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.prop-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.prop-desc {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+/* ── SECTIONS BASE ───────────────────────────────────── */
+section { padding: clamp(60px, 8vw, 108px) clamp(16px, 5vw, 72px); }
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: 14px;
+}
+
+.sec-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.875rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  text-wrap: balance;
+  margin-bottom: 18px;
+}
+
+.sec-body {
+  font-size: 1.0625rem;
+  color: var(--fg-muted);
+  max-width: 52ch;
+  line-height: 1.75;
+}
+
+/* ── QUÉ HACEMOS ─────────────────────────────────────── */
+.que-section { background: var(--bg); }
+
+.que-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.que-statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.375rem, 2vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+}
+.que-statement strong { color: var(--electric); }
+
+.que-body p {
+  color: var(--fg-mid);
+  line-height: 1.8;
+  margin-bottom: 14px;
+  font-size: 1.0625rem;
+}
+
+/* Diferenciador clave — franja destacada */
+.diferenciador {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 12px;
+  padding: 32px 36px;
+  margin-top: 48px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.dif-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--electric);
+  margin-bottom: 8px;
+}
+.dif-text {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.dif-sub {
+  margin-top: 6px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+.dif-icon-wrap {
+  flex-shrink: 0;
+  font-size: 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .que-intro { grid-template-columns: 1fr; gap: 36px; }
+  .diferenciador { flex-direction: column; }
+}
+
+/* Servicios lista */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.servicio-item {
+  background: var(--surface);
+  padding: 32px 28px;
+  display: flex;
+  gap: 20px;
+}
+
+.srv-num {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--electric);
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  padding-top: 4px;
+  width: 30px;
+}
+
+.srv-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+
+.srv-desc {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 680px) {
+  .servicios-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SECTORES ────────────────────────────────────────── */
+.sectores-section { background: var(--bg-alt); }
+
+.sectores-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+@media (max-width: 680px) {
+  .sectores-head { grid-template-columns: 1fr; }
+}
+
+.sectores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.sector-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 28px 26px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.sector-card:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+}
+
+.sector-icon { font-size: 1.75rem; margin-bottom: 16px; }
+
+.sector-name {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--fg);
+}
+
+.sector-desc {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  line-height: 1.65;
+}
+
+.sector-tag {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--electric);
+  background: rgba(26,86,219,0.09);
+  padding: 3px 9px;
+  border-radius: 4px;
+}
+
+/* ── PROCESO ─────────────────────────────────────────── */
+.proceso-section { background: var(--bg); }
+
+.proceso-intro { max-width: 580px; margin-bottom: 64px; }
+
+.proceso-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.proceso-steps::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: var(--border);
+}
+
+.paso {
+  padding-right: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.paso-num {
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--electric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  color: var(--electric);
+  margin-bottom: 24px;
+  font-variant-numeric: tabular-nums;
+}
+
+.paso-title {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--fg);
+}
+
+.paso-desc {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 740px) {
+  .proceso-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .proceso-steps::before { display: none; }
+}
+@media (max-width: 460px) {
+  .proceso-steps { grid-template-columns: 1fr; }
+}
+
+/* ── POR QUÉ PREZOVO — franja marca ─────────────────── */
+.porq-section {
+  background: var(--navy);
+  color: #fff;
+}
+.porq-section .eyebrow { color: rgba(255,255,255,0.4); }
+.porq-section .sec-title { color: #fff; }
+
+.porq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  margin-top: 52px;
+  align-items: start;
+}
+
+.porq-left p {
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  font-size: 1.0625rem;
+}
+
+.porq-puntos { display: flex; flex-direction: column; gap: 14px; }
+
+.porq-punto {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+.check-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--electric);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.porq-punto strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.porq-punto span {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .porq-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ── MERCADOS ────────────────────────────────────────── */
+.mercados-section { background: var(--bg-alt); }
+
+.mercados-pills {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+
+.mpill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--fg-mid);
+}
+.mpill-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--electric);
+  flex-shrink: 0;
+}
+
+/* ── CONTACTO ────────────────────────────────────────── */
+.contacto-section { background: var(--bg); }
+
+.contacto-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+.contacto-info p {
+  color: var(--fg-muted);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  font-size: 1.0625rem;
+}
+
+.info-cards { display: flex; flex-direction: column; gap: 12px; }
+
+.info-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+}
+
+.info-card-icon {
+  width: 36px; height: 36px;
+  border-radius: 6px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.info-card small {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 3px;
+}
+
+.info-card strong {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--fg);
+  user-select: all;
+}
+
+/* Form */
+.form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 32px;
+}
+
+.form-wrap h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--fg);
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.fwrap { display: flex; flex-direction: column; gap: 6px; }
+
+.fwrap label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--fg-mid);
+  letter-spacing: 0.01em;
+}
+
+.fwrap input,
+.fwrap select,
+.fwrap textarea {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 7px;
+  padding: 11px 14px;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  color: var(--fg);
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.fwrap input:focus,
+.fwrap select:focus,
+.fwrap textarea:focus {
+  border-color: var(--electric);
+}
+.fwrap textarea { resize: vertical; min-height: 96px; }
+
+.form-submit {
+  background: var(--electric);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 14px 28px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background 0.15s;
+  width: 100%;
+  margin-top: 4px;
+}
+.form-submit:hover { background: var(--electric-l); }
+
+.form-nota {
+  font-size: 0.8rem;
+  color: var(--fg-muted);
+  text-align: center;
+  margin-top: 4px;
+}
+
+.form-ok {
+  display: none;
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 24px;
+  color: #166534;
+  font-weight: 500;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 760px) {
+  .contacto-wrap { grid-template-columns: 1fr; gap: 48px; }
+  .frow { grid-template-columns: 1fr; }
+}
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  padding: 36px clamp(16px, 5vw, 72px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+.footer-logo .logo-ovo { color: var(--electric); }
+
+footer p { font-size: 0.8125rem; }
 </style>
-</head>
-<body>
-<header><div class="wrap nav">
-<a class="logo" href="#top">Prez<span>ovo</span></a>
-<nav aria-label="Principal"><ul>
-<li><a href="#modelos">Qué hacemos</a></li><li><a href="#sectores">Sectores</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#faq">Preguntas</a></li>
-<li><a class="btn" href="#contacto">Hablemos</a></li></ul></nav>
-</div></header>
 
-<main id="top">
-<section class="hero"><div class="wrap hero-grid">
-<div>
-<h1>Reuniones con clientes que ya quieren tu servicio, listas para cerrar.</h1>
-<p class="lead">Contactamos por correo y teléfono con empresas que necesitan lo que tú ofreces, filtramos el interés real y concertamos la reunión. Tú te presentas y cierras.</p>
-<div class="actions"><a class="btn" href="#contacto">Cuéntanos qué vendes</a><a class="btn ghost" href="#proceso">Ver el proceso</a></div>
-<p class="note">Condiciones por escrito antes de empezar. Retribución ligada a resultados.</p>
-</div>
-<aside class="lead-card" aria-label="Ejemplo de ficha de contacto cualificado">
-<header><span>Ficha de contacto cualificado</span><span>Ejemplo</span></header>
-<dl>
-<div class="row"><dt>Cliente potencial</dt><dd>Clínica privada, 2 centros</dd></div>
-<div class="row"><dt>Interesado en</dt><dd>Servicio de limpieza y mantenimiento</dd></div>
-<div class="row"><dt>Decisor</dt><dd>Gerencia</dd></div>
-<div class="row"><dt>Plazo</dt><dd>Quiere cambiar de proveedor este trimestre</dd></div>
-<div class="row"><dt>Estado</dt><dd>Reunión agendada con tu equipo</dd></div>
-</dl>
-<footer>Esto es lo que recibes por cada contacto: quién es, qué busca y cuándo habláis.</footer>
-</aside>
-</div></section>
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">Prez<span class="logo-ovo">ovo</span></div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#sectores">Sectores</a></li>
+    <li><a href="#proceso">Cómo funciona</a></li>
+    <li><a href="#contacto" class="nav-cta">Hablemos</a></li>
+  </ul>
+  <a href="#contacto" class="nav-mobile-cta">Contacto</a>
+</nav>
 
-<div class="band"><div class="wrap">
-<div><strong>100% a distancia</strong><span>Correo, redes profesionales y videollamada.</span></div>
-<div><strong>Con tu marca</strong><span>Mensajes aprobados por ti, en tu nombre.</span></div>
-<div><strong>Por escrito</strong><span>Comisión, plazos y propiedad del contacto.</span></div>
-<div><strong>Sin equipo propio</strong><span>Tú atiendes, nosotros abrimos la puerta.</span></div>
-</div></div>
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Intermediario Comercial B2B
+    </div>
+    <h1>Nosotros<br>encontramos<br>al cliente.<br><span class="accent">Tú cierras.</span></h1>
+    <p class="hero-sub">Prezovo trabaja como tu equipo externo de ventas: identificamos empresas que encajan con tu perfil de cliente ideal, abrimos la conversación, la cualificamos y te entregamos la reunión ya preparada para cerrar.</p>
+    <div class="hero-btns">
+      <a href="#contacto"><button class="btn-blue">Solicitar reunión →</button></a>
+      <a href="#proceso" class="btn-outline">Cómo funciona ↓</a>
+    </div>
+  </div>
 
-<section id="modelos"><div class="wrap">
-<h2>Qué hacemos por tu empresa</h2>
-<p class="lead">Un proceso sencillo que te quita la parte más lenta de vender: encontrar a quien decide.</p>
-<div class="cols">
-<div class="card accent"><h3>Contactamos</h3><p>Escribimos y llamamos a empresas que encajan con tu cliente ideal, siempre con mensajes que tú has aprobado.</p></div>
-<div class="card accent"><h3>Filtramos</h3><p>Comprobamos si necesitan el servicio, si quien habla decide, cuándo quieren contratarlo y qué presupuesto manejan.</p></div>
-<div class="card accent"><h3>Concertamos la reunión</h3><p>Te pasamos la ficha del cliente con la cita ya acordada. Tú te presentas y cierras.</p></div>
-</div></div></section>
+  <div class="hero-right">
+    <div class="prop-card">
+      <div class="prop-icon">🎯</div>
+      <div>
+        <div class="prop-title">Solo cobramos si entregamos</div>
+        <div class="prop-desc">Sin retainer, sin pagos anticipados. Nuestro ingreso está ligado directamente a los resultados que te generamos.</div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-icon">✅</div>
+      <div>
+        <div class="prop-title">Leads ya cualificados</div>
+        <div class="prop-desc">No enviamos listas de contactos. Entregamos reuniones concretas con decisores que ya saben quién eres y por qué merece la pena conocerte.</div>
+      </div>
+    </div>
+    <div class="prop-card">
+      <div class="prop-icon">🤝</div>
+      <div>
+        <div class="prop-title">Volumen selectivo, no masivo</div>
+        <div class="prop-desc">Trabajamos pocos casos simultáneamente para garantizar que cada introducción tenga máximas probabilidades de cierre.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section id="sectores" style="padding-top:0"><div class="wrap">
-<h2>Sectores en los que trabajamos</h2>
-<p class="lead">Servicios que las empresas necesitan y que se explican bien a distancia.</p>
-<div class="sectors">
-<div class="sector"><h3>Limpieza y mantenimiento</h3><p>Oficinas, clínicas, comunidades y locales que buscan un proveedor fiable.</p></div>
-<div class="sector"><h3>Prevención y cumplimiento normativo</h3><p>Pymes que necesitan cumplir obligaciones laborales y de protección de datos.</p></div>
-<div class="sector"><h3>Viajes corporativos y eventos</h3><p>Empresas que organizan reuniones, convenciones y viajes de incentivo.</p></div>
-<div class="sector"><h3>Software y digitalización</h3><p>Negocios que quieren dejar de gestionar a mano facturas, clientes y procesos.</p></div>
-<div class="sector"><h3>Programas en el extranjero y formación</h3><p>Estancias, idiomas y programas para estudiantes y profesionales.</p></div>
-<div class="sector"><h3>Turismo y viajes de grupos</h3><p>Hoteles, alojamientos y agencias de viajes escolares y de grupos.</p></div>
-</div>
-<div class="card" style="margin-top:34px"><h3>¿Tu sector no aparece?</h3><p>Si vendes un servicio a empresas y quieres más reuniones con clientes, cuéntanos tu caso. Valoramos cada propuesta y te decimos con sinceridad si podemos ayudarte.</p></div>
-</div></section>
+<!-- ── QUÉ HACEMOS ── -->
+<section class="que-section" id="servicios">
+  <div class="que-intro">
+    <div>
+      <div class="eyebrow">Qué hacemos</div>
+      <p class="que-statement">Somos el puente entre tu empresa y los clientes que <strong>necesitan lo que ofreces</strong>, pero aún no te conocen.</p>
+    </div>
+    <div class="que-body">
+      <p>La mayoría de empresas con un buen servicio no tienen problemas de calidad — tienen problemas de pipeline. Llegar a los decisores correctos lleva tiempo, contactos y persistencia.</p>
+      <p>Eso es exactamente lo que hace Prezovo. Investigamos tu mercado objetivo, abrimos la conversación, filtramos el interés real y te presentamos al cliente con todo el contexto necesario para que la primera reunión ya sea una reunión de cierre.</p>
+      <p>Nuestro modelo es claro: ganamos cuando tú ganas.</p>
+    </div>
+  </div>
 
-<section class="dark" id="proceso"><div class="wrap split">
-<div>
-<h2>Así trabajamos, paso a paso</h2>
-<p class="lead">Un proceso claro, con puntos de control en cada fase.</p>
-</div>
-<ol class="route">
-<li><h3>Entendemos tu oferta</h3><p>Qué vendes, a quién y qué sería un buen cliente para ti.</p></li>
-<li><h3>Fijamos las reglas por escrito</h3><p>Comisión, plazos, exclusividad y quién es el dueño de cada contacto.</p></li>
-<li><h3>Contactamos a distancia</h3><p>Con tus mensajes aprobados y registrando cada contacto presentado.</p></li>
-<li><h3>Te entregamos reuniones</h3><p>Cada ficha incluye contexto, interés y cita acordada. El cierre es tuyo.</p></li>
-<li><h3>Medimos y ajustamos</h3><p>Revisamos cuántos contactos acaban en cliente y mejoramos el enfoque.</p></li>
-</ol></div></section>
+  <div class="diferenciador">
+    <div class="dif-icon-wrap">🔑</div>
+    <div>
+      <div class="dif-label">La diferencia clave</div>
+      <div class="dif-text">No generamos volumen. Generamos certeza.</div>
+      <div class="dif-sub">Cada caso que llevamos adelante lo hacemos porque creemos que puede cerrarse. Si no vemos una probabilidad real de éxito, no lo aceptamos. Eso nos obliga a ser selectivos — y a ti te protege de perder tiempo con reuniones que no van a ningún sitio.</div>
+    </div>
+  </div>
 
-<section><div class="wrap split">
-<div>
-<h2>Cómo cuidamos tu marca</h2>
-<p class="lead">Trabajar en tu nombre exige confianza, y la construimos con reglas claras.</p>
-</div>
-<ul class="checks">
-<li>Mensajes aprobados por ti antes de enviarlos.</li>
-<li>Registro con fecha de cada contacto presentado.</li>
-<li>Respeto a la normativa de protección de datos y de comunicaciones comerciales.</li>
-<li>Confidencialidad sobre tus precios y tu cartera.</li>
-<li>No vendemos servicios que requieran licencia propia: eso lo hace tu empresa.</li>
-</ul></div></section>
+  <br><br>
 
-<section id="faq" style="padding-top:0"><div class="wrap">
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Hablaréis como si fuerais mi empresa?</summary><p>Podemos presentarnos como tu equipo comercial o como colaborador de tu empresa, según prefieras. Lo acordamos por escrito.</p></details>
-<details><summary>¿Cómo cobráis?</summary><p>Preferimos fórmulas ligadas a resultados: comisión por cliente cerrado o pago por contacto cualificado. Lo definimos antes de empezar.</p></details>
-<details><summary>¿Trabajáis solo en España?</summary><p>Trabajamos a distancia, así que el mercado puede ser España o el que elijas. Comentamos tu caso y vemos si encaja.</p></details>
-<details><summary>¿Cuánto tarda en notarse?</summary><p>Depende del sector y de la temporada. Tras definir juntos el cliente ideal, solemos tener los primeros contactos cualificados en las primeras semanas.</p></details>
-<details><summary>¿Y si mi sector no aparece en la lista?</summary><p>Trabajamos con cualquier empresa de servicios que venda a otras empresas. Escríbenos y valoramos tu caso.</p></details>
-<details><summary>¿Y si ya tengo equipo comercial?</summary><p>Podemos complementarlo en nuevas zonas o canales, sin tocar lo que ya funciona.</p></details>
-</div></section>
+  <div class="servicios-grid">
+    <div class="servicio-item">
+      <div class="srv-num">01</div>
+      <div>
+        <div class="srv-name">Identificación y Prospección</div>
+        <div class="srv-desc">Investigamos y mapeamos empresas en tu mercado objetivo. Definimos juntos el perfil de cliente ideal y buscamos los decisores correctos, no solo los contactos disponibles.</div>
+      </div>
+    </div>
+    <div class="servicio-item">
+      <div class="srv-num">02</div>
+      <div>
+        <div class="srv-name">Apertura y Cualificación</div>
+        <div class="srv-desc">Realizamos el primer contacto en tu nombre con un enfoque personalizado. Antes de pasarte la reunión, confirmamos presupuesto, autoridad de decisión, necesidad real y plazo.</div>
+      </div>
+    </div>
+    <div class="servicio-item">
+      <div class="srv-num">03</div>
+      <div>
+        <div class="srv-name">Introducción Comercial</div>
+        <div class="srv-desc">Hacemos la presentación formal entre tú y el prospecto, con contexto completo. Entras a la reunión ya con credibilidad — el cliente ya sabe quién eres y por qué merece la pena escucharte.</div>
+      </div>
+    </div>
+    <div class="servicio-item">
+      <div class="srv-num">04</div>
+      <div>
+        <div class="srv-name">Entrada en Nuevos Mercados</div>
+        <div class="srv-desc">¿Quieres crecer a otro país o sector? Mapeamos el terreno, identificamos los actores clave y te entregamos los contactos para aterrizar con fuerza desde el primer día.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="contact" id="contacto"><div class="wrap split">
-<div>
-<h2>Hablemos de tus próximos clientes</h2>
-<p class="lead">Cuéntanos qué vendes y a quién quieres llegar. Te respondemos en menos de 48 horas.</p>
-</div>
-<form class="form" id="f">
-<div class="f"><label for="n">Nombre</label><input id="n" name="n" required autocomplete="name"></div>
-<div class="f"><label for="e">Empresa</label><input id="e" name="e" autocomplete="organization"></div>
-<div class="f"><label for="s">Sector</label><select id="s" name="s"><option>Limpieza y mantenimiento</option><option>Prevención y cumplimiento normativo</option><option>Viajes corporativos y eventos</option><option>Software y digitalización</option><option>Programas en el extranjero y formación</option><option>Turismo y viajes de grupos</option><option>Otro servicio para empresas</option></select></div>
-<div class="f"><label for="m">¿Qué quieres conseguir?</label><textarea id="m" name="m"></textarea></div>
-<button class="btn" type="submit">Enviar consulta</button>
-<small>Se abrirá tu correo con el mensaje preparado.</small>
-</form>
-</div></section>
-</main>
+<!-- ── SECTORES ── -->
+<section class="sectores-section" id="sectores">
+  <div class="sectores-head">
+    <div>
+      <div class="eyebrow">Sectores</div>
+      <h2 class="sec-title">Dónde operamos</h2>
+    </div>
+    <p class="sec-body">Nos enfocamos en sectores B2B donde las relaciones son el motor de negocio y donde una introducción de confianza marca la diferencia entre una reunión y un contrato.</p>
+  </div>
 
-<footer class="site"><div class="wrap"><span>© <script>document.write(new Date().getFullYear())</script> Prezovo</span><span>Equipo comercial externo, a distancia</span></div></footer>
+  <div class="sectores-grid">
+    <div class="sector-card">
+      <div class="sector-icon">⚖️</div>
+      <div class="sector-name">Servicios Jurídicos</div>
+      <div class="sector-desc">Despachos de abogados, notarías y consultoras legales que buscan clientes en derecho mercantil, inmobiliario o internacional.</div>
+      <span class="sector-tag">Comisión alta</span>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon">🏢</div>
+      <div class="sector-name">Consultoría Empresarial</div>
+      <div class="sector-desc">Consultoras de gestión, asesoría financiera y estrategia para pymes y empresas de tamaño medio en busca de nuevos clientes corporativos.</div>
+      <span class="sector-tag">Volumen estable</span>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon">✈️</div>
+      <div class="sector-name">Viajes y Eventos Corporativos</div>
+      <div class="sector-desc">Agencias especializadas en grupos corporativos, viajes de incentivo, convenciones y viajes de fin de curso.</div>
+      <span class="sector-tag">Modelo probado</span>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon">🎓</div>
+      <div class="sector-name">Formación Empresarial</div>
+      <div class="sector-desc">Academias, escuelas de idiomas y formación ejecutiva que buscan captar empresas como clientes para formación de equipos.</div>
+      <span class="sector-tag">Recurrente</span>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon">🏗️</div>
+      <div class="sector-name">Inmobiliario B2B</div>
+      <div class="sector-desc">Agencias de inmobiliario comercial, promotores y gestores de activos con clientes corporativos, inversores o compradores institucionales.</div>
+      <span class="sector-tag">Alto valor por operación</span>
+    </div>
+    <div class="sector-card">
+      <div class="sector-icon">💻</div>
+      <div class="sector-name">Software para Pymes</div>
+      <div class="sector-desc">Productos SaaS, ERPs y herramientas digitales que necesitan apoyo comercial para vender a empresas pequeñas y medianas.</div>
+      <span class="sector-tag">Escalable</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESO ── -->
+<section class="proceso-section" id="proceso">
+  <div class="proceso-intro">
+    <div class="eyebrow">Cómo funciona</div>
+    <h2 class="sec-title">Simple, directo y sin fricciones</h2>
+    <p class="sec-body">Funcionamos como una extensión de tu equipo comercial. Sin onboarding complejo, sin contratos largos. Un acuerdo claro, un objetivo definido y resultados.</p>
+  </div>
+
+  <div class="proceso-steps">
+    <div class="paso">
+      <div class="paso-num">01</div>
+      <div class="paso-title">Reunión de descubrimiento</div>
+      <div class="paso-desc">Entendemos tu negocio, tu cliente ideal, tu pipeline actual y qué significa un buen lead para ti. Sin esto no podemos ser selectivos.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">02</div>
+      <div class="paso-desc"></div>
+      <div class="paso-title">Acuerdo comercial</div>
+      <div class="paso-desc">Definimos los criterios de cualificación, la estructura de comisiones y cómo se harán las introducciones. Acuerdo escrito simple, sin retainer.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">03</div>
+      <div class="paso-title">Salimos al mercado</div>
+      <div class="paso-desc">Iniciamos la prospección, la cualificación y la construcción de relaciones en tu mercado objetivo. Tú sigues enfocado en tu trabajo.</div>
+    </div>
+    <div class="paso">
+      <div class="paso-num">04</div>
+      <div class="paso-title">Introducción ya preparada</div>
+      <div class="paso-desc">Cuando el prospecto está listo para hablar, hacemos la introducción formal. Tú cierras. Nosotros cobramos comisión por el resultado.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POR QUÉ PREZOVO ── -->
+<section class="porq-section">
+  <div class="eyebrow">Por qué Prezovo</div>
+  <div class="porq-grid">
+    <div class="porq-left">
+      <h2 class="sec-title">Incentivos<br>alineados.<br>Responsabilidad real.</h2>
+      <p>Contratar un equipo de ventas es caro y lento. La publicidad genera ruido, no relaciones. La mayoría de las agencias cobran retainer independientemente de los resultados.</p>
+      <p>Prezovo es diferente porque solo cobramos cuando entregamos. Eso nos mantiene honestos, enfocados y trabajando más duro que cualquier comercial asalariado.</p>
+      <p>Nuestra formación en Economía y Comercio Internacional nos da contexto de negocio real — no solo sabemos enviar emails en frío.</p>
+    </div>
+    <div class="porq-puntos">
+      <div class="porq-punto">
+        <div class="check-icon">✓</div>
+        <div>
+          <strong>Sin coste inicial</strong>
+          <span>Cero retainer. Solo inviertes cuando un lead se convierte. Nuestro riesgo está ligado al tuyo.</span>
+        </div>
+      </div>
+      <div class="porq-punto">
+        <div class="check-icon">✓</div>
+        <div>
+          <strong>Humano, no automatizado</strong>
+          <span>No hacemos envíos masivos. Cada empresa que contactamos recibe un acercamiento personalizado e investigado.</span>
+        </div>
+      </div>
+      <div class="porq-punto">
+        <div class="check-icon">✓</div>
+        <div>
+          <strong>Visión internacional</strong>
+          <span>Operamos en toda España y atendemos clientes de EE.UU., Italia, Malta, Portugal y Francia que quieren expandirse aquí.</span>
+        </div>
+      </div>
+      <div class="porq-punto">
+        <div class="check-icon">✓</div>
+        <div>
+          <strong>Introducciones de confianza</strong>
+          <span>No pasamos listas de contactos. Hacemos presentaciones reales — el prospecto ya sabe quién eres antes de reunirse.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MERCADOS ── -->
+<section class="mercados-section">
+  <div class="eyebrow">Cobertura</div>
+  <h2 class="sec-title">Operamos en toda España</h2>
+  <p class="sec-body" style="margin-top:12px; margin-bottom:40px;">Trabajamos con empresas en cualquier punto del territorio español — y con clientes de fuera que quieren operar o vender aquí.</p>
+
+  <div style="display:flex; flex-direction:column; gap:28px;">
+    <div>
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--electric);margin-bottom:14px;">Donde operamos</p>
+      <div class="mercados-pills">
+        <div class="mpill"><div class="mpill-dot"></div> 🇪🇸 España — cobertura nacional</div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-muted);margin-bottom:14px;">Clientes que atendemos desde el extranjero</p>
+      <div class="mercados-pills">
+        <div class="mpill" style="color:var(--fg-muted);"><div class="mpill-dot" style="background:var(--fg-muted)"></div> 🇺🇸 Estados Unidos</div>
+        <div class="mpill" style="color:var(--fg-muted);"><div class="mpill-dot" style="background:var(--fg-muted)"></div> 🇮🇹 Italia</div>
+        <div class="mpill" style="color:var(--fg-muted);"><div class="mpill-dot" style="background:var(--fg-muted)"></div> 🇲🇹 Malta</div>
+        <div class="mpill" style="color:var(--fg-muted);"><div class="mpill-dot" style="background:var(--fg-muted)"></div> 🇵🇹 Portugal</div>
+        <div class="mpill" style="color:var(--fg-muted);"><div class="mpill-dot" style="background:var(--fg-muted)"></div> 🇫🇷 Francia</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACTO ── -->
+<section class="contacto-section" id="contacto">
+  <div class="contacto-wrap">
+    <div class="contacto-info">
+      <div class="eyebrow">Contacto</div>
+      <h2 class="sec-title">Cuéntanos tu negocio</h2>
+      <p>Si tienes un buen servicio y necesitas más clientes, hablemos. Evaluaremos rápidamente si podemos aportarte valor — y si es así, acordamos una estructura que funcione para los dos.</p>
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="info-card-icon">✉️</div>
+          <div>
+            <small>Email</small>
+            <strong>hello@prezovo.com</strong>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⏱</div>
+          <div>
+            <small>Tiempo de respuesta</small>
+            <strong>Menos de 24 horas</strong>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🌍</div>
+          <div>
+            <small>Cobertura</small>
+            <strong>Toda España</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="form-wrap">
+        <h3>Solicita una primera reunión</h3>
+        <form class="contact-form" id="contactForm">
+          <div class="frow">
+            <div class="fwrap">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" placeholder="Ana García" required>
+            </div>
+            <div class="fwrap">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" placeholder="Bufete García & Asociados" required>
+            </div>
+          </div>
+          <div class="fwrap">
+            <label for="email">Email corporativo</label>
+            <input type="email" id="email" placeholder="ana@garcialaw.com" required>
+          </div>
+          <div class="fwrap">
+            <label for="sector">Sector</label>
+            <select id="sector">
+              <option value="">Selecciona tu sector…</option>
+              <option>Servicios Jurídicos</option>
+              <option>Consultoría Empresarial</option>
+              <option>Viajes y Eventos Corporativos</option>
+              <option>Formación Empresarial</option>
+              <option>Inmobiliario</option>
+              <option>Software / SaaS</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="fwrap">
+            <label for="mensaje">Cuéntanos tu situación</label>
+            <textarea id="mensaje" placeholder="¿Cuál es tu cliente ideal? ¿Dónde está el cuello de botella en tu captación actual?" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Enviar mensaje →</button>
+          <p class="form-nota">Sin compromiso. Te respondemos con una valoración honesta.</p>
+        </form>
+        <div class="form-ok" id="formOk">
+          ✅ Mensaje recibido. Te escribimos en menos de 24 horas.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Prez<span class="logo-ovo">ovo</span></div>
+  <p>© 2026 Prezovo · Intermediario Comercial B2B · España</p>
+  <p>hello@prezovo.com</p>
+</footer>
 
 <script>
-document.getElementById('f').addEventListener('submit',function(ev){
-  ev.preventDefault();
-  var g=function(id){return document.getElementById(id).value.trim()};
-  var body='Nombre: '+g('n')+'\nEmpresa: '+g('e')+'\nSector: '+g('s')+'\n\n'+g('m');
-  window.location.href='mailto:TUCORREO@prezovo.com?subject='+encodeURIComponent('Consulta desde la web de Prezovo')+'&body='+encodeURIComponent(body);
-});
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.hidden = true;
+    document.getElementById('formOk').style.display = 'block';
+  });
 </script>
-</body>
-</html>
